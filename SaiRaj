@@ -1,1 +1,13 @@
 
+              var Result = response.Result.Content.ReadAsStringAsync().Result.ToString();
+                var json = JsonConvert.DeserializeObject(Result).ToString();
+                var model = JsonConvert.DeserializeObject<List<StatusClass>>(json);
+                
+                
+                public class StatusClass
+    {
+        public string CompanyName { get; set; }
+        public int FailedEmailCount { get; set; }
+        public int EmailQueueId { get; set; }
+       
+    }
